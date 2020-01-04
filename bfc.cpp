@@ -62,7 +62,7 @@ signed main(signed argc, char** argv) {
 	
 	std::fprintf(
 		out,
-		"#include<stdio.h>\n"
+		"#include<cstdio>\n"
 		"#define a while(*p){\n"
 		"#define b }\n"
 		"#define c ++p;p==r?p=l:0;\n"
@@ -71,7 +71,7 @@ signed main(signed argc, char** argv) {
 		"#define f --(*p);\n"
 		"#define g *p=getchar();\n"
 		"#define h putchar(*p);\n"
-		"main(){int*l=new int[%s],*r=l+%s,*p=l;\n",
+		"int main(){int*l=new int[%s],*r=l+%s,*p=l;\n",
 		argv[3],
 		argv[3]
 	);
@@ -116,6 +116,7 @@ signed main(signed argc, char** argv) {
 	}
 	
 	std::system(str);
+	std::system("del tmp.cpp");
 	
 	return 0;
 }
